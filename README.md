@@ -58,10 +58,12 @@ streamlit run app.py
 ---
 
 ## 🧰 Technologies utilisées
-- `Streamlit` : interface interactive
-- `Scikit-learn` : modèles ML
-- `Pandas` / `NumPy` : traitement des données
-- `Matplotlib` / `Seaborn` : visualisations
+- `streamlit` : interface utilisateur interactive
+- `pandas` : manipulation des données tabulaires
+- `numpy` : calculs numériques
+- `scikit-learn` : modèles de Machine Learning
+- `matplotlib` : graphiques standards
+- `seaborn` : visualisation statistique avancée
 
 ---
 
