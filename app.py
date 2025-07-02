@@ -60,6 +60,18 @@ h1, h2, h3 {
     background-color: #ff0000;
     color: white;
 }
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 110%;
+    background-color: #002b5c;
+    color: white;
+    text-align: center;
+    padding: 0.9em 0;
+    font-size: 1.1em;
+    z-index: 9999;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -93,7 +105,9 @@ elif page == "1 - Comportement client":
     def generate_customer_data():
         np.random.seed(42)
         n = 1000
+        noms_clients = ["Salah", "Sarah", "Azouaou", "Sabrina", "Tina", "Zahia", "Idir", "Bao", "Tarik", "Nacer", "Ourida", "Rabah"]
         df = pd.DataFrame({
+            'Nom': np.random.choice(noms_clients, n),
             'age': np.random.randint(18, 70, n),
             'revenu_annuel': np.random.randint(20000, 80000, n),
             'frequence_achats_mois': np.random.randint(1, 10, n),
@@ -113,7 +127,9 @@ elif page == "1 - Comportement client":
     clf = RandomForestClassifier(n_estimators=100)
     clf.fit(X_train, y_train)
 
-    st.dataframe(df.head())
+    st.write("### Données clients (extrait)")
+    st.dataframe(df[['Nom', 'age', 'revenu_annuel', 'frequence_achats_mois', 'montant_moyen_panier', 'achete_produit_cible']].head(10))
+
     st.write(f"**Score du modèle :** {clf.score(X_test, y_test):.2f}")
 
     st.markdown("#### Tester une prédiction")
@@ -131,6 +147,19 @@ elif page == "1 - Comportement client":
             st.success(f"Client susceptible d'acheter (probabilité : {proba:.2f})")
         else:
             st.warning(f"Client peu susceptible (probabilité : {proba:.2f})")
+
+    st.markdown("#### Ou sélectionner un client existant")
+    client_nom = st.selectbox("Choisir un client existant", df['Nom'].unique())
+
+    if st.button("Prédire pour ce client"):
+        client_row = df[df['Nom'] == client_nom].iloc[0]
+        input_data = pd.DataFrame([client_row[['age', 'revenu_annuel', 'frequence_achats_mois', 'montant_moyen_panier']]])
+        pred = clf.predict(input_data)[0]
+        proba = clf.predict_proba(input_data)[0][1]
+        if pred == 1:
+            st.success(f"{client_nom} est susceptible d'acheter (probabilité : {proba:.2f})")
+        else:
+            st.warning(f"{client_nom} est peu susceptible d'acheter (probabilité : {proba:.2f})")
 
 # ---------- SECTION 2 ----------
 elif page == "2 - Prévision logistique":
@@ -163,10 +192,11 @@ elif page == "3 - Recommandation produit":
 
     @st.cache_data
     def generate_matrix():
-        clients, produits = 100, 30
-        mat = np.random.randint(0, 2, (clients, produits))
-        return pd.DataFrame(mat, index=[f"Client {i}" for i in range(clients)],
-                            columns=[f"Produit {j}" for j in range(produits)])
+        clients = ["Salah", "Sarah", "Azouaou", "Sabrina", "Tina", "Zahia", "Idir", "Bao", "Tarik", "Nacer", "Ourida", "Rabah"]
+        produits = ["Lait", "Pain", "Pâtes", "Tomates", "Bananes", "Jus d'orange", "Eau minérale", "Poulet", "Yaourt", "Fromage"]
+        np.random.seed(42)
+        mat = np.random.randint(0, 2, (len(clients), len(produits)))
+        return pd.DataFrame(mat, index=clients, columns=produits)
 
     matrix = generate_matrix()
     model = NearestNeighbors(metric="cosine").fit(matrix)
@@ -189,5 +219,9 @@ elif page == "3 - Recommandation produit":
         else:
             st.info("Aucune recommandation nouvelle pour ce client.")
 
-# ---------- FOOTER ----------
-st.markdown("<hr><p style='text-align:center;'>By Dyhia BERKHOUCHE</p>", unsafe_allow_html=True)
+# ---------- FOOTER GLOBAL ----------
+st.markdown("""
+<div class="footer">
+    © Tous droits réservés - Dyhia BERKHOUCHE
+</div>
+""", unsafe_allow_html=True)
