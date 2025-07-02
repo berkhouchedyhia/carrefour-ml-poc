@@ -1,4 +1,4 @@
-# 🧠 POC Machine Learning - Carrefour Market
+# 🧠 POC Machine Learning - Carrefour Market 🧠
 
 ## 📌 Objectif
 Ce projet interactif démontre comment le Machine Learning peut répondre à trois besoins métiers stratégiques de Carrefour Market :
