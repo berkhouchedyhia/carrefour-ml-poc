@@ -1,41 +1,39 @@
 # 🧠 POC Machine Learning - Carrefour Market
 
 ## 📌 Objectif
-Ce projet interactif démontre comment le Machine Learning peut répondre à trois besoins métiers stratégiques de Carrefour Market :
-1. **Anticiper les comportements clients** : Prédiction d’achat
-2. **Optimiser la logistique** : Prévision de la demande
-3. **Personnaliser les recommandations produit** : Recommandation basée sur les achats
+Ce projet démontre comment le Machine Learning peut répondre à trois besoins métiers clés pour Carrefour Market :
+1. **Anticiper les comportements clients** : Prédire la probabilité d’achat
+2. **Optimiser la logistique** : Prévoir la demande journalière
+3. **Personnaliser les recommandations produit** : Recommander des articles pertinents aux clients
 
 ---
 
-## 🚀 Fonctionnalités principales
+## 🚀 Fonctionnalités
 
 ### 🔹 Prédiction d'achat (Classification)
 - Modèle : `RandomForestClassifier`
-- Entrées : âge, revenu, fréquence d'achat, panier moyen
-- Sortie : probabilité d’achat d’un produit
+- Données : âge, revenu, fréquence d'achat, panier moyen
+- Affichage de la probabilité d’achat via Streamlit
 
 ### 🔹 Prévision de la demande (Séries temporelles)
 - Modèle : `LinearRegression`
-- Données : demande journalière simulée (365 jours)
-- Visualisation interactive + prévision d’une date future
+- Données : demande quotidienne simulée (365 jours)
+- Prévision de la demande future
 
 ### 🔹 Recommandation produit (Collaborative Filtering)
 - Modèle : `K-Nearest Neighbors`
-- Données : matrice binaire client-produit
-- Recommandation par similarité entre clients
+- Données : matrice client-produit binaire
+- Suggestions de produits non encore achetés par client
 
 ---
 
 ## 🏗️ Structure du projet
 
 ```
-carrefour-ml-poc/
-├── app.py                  # Application Streamlit
-├── requirements.txt        # Dépendances Python
-├── lancer_app_ml.bat       # Script de lancement automatique
-├── README.md               # Ce fichier
-└── POC_Carrefour_Market_ML.pdf  # Rapport complet
+carrefour_ml_poc/
+├── app.py              # Interface Streamlit
+├── requirements.txt    # Dépendances Python
+└── README.md           # Ce fichier
 ```
 
 ---
@@ -53,44 +51,45 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-> Accès local via : [http://localhost:8501](http://localhost:8501)
+L’application sera disponible sur [http://localhost:8501](http://localhost:8501)
 
 ---
 
-## 🧰 Technologies utilisées
-- `streamlit` : interface utilisateur interactive
-- `pandas` : manipulation des données tabulaires
-- `numpy` : calculs numériques
-- `scikit-learn` : modèles de Machine Learning
-- `matplotlib` : graphiques standards
-- `seaborn` : visualisation statistique avancée
+## 📊 Technologies utilisées
+- `Python`, `Streamlit`
+- `Scikit-learn`, `Pandas`, `NumPy`
+- `Matplotlib`, `Seaborn`
 
 ---
 
-## 💼 Cas d’usage métier
+## ✅ Cas d’usage métier
 
 ### Marketing
-- Ciblage comportemental
-- Campagnes personnalisées
+- Ciblage client, campagnes intelligentes, recommandations personnalisées
 
 ### Logistique
-- Prévision de stock
-- Réduction des ruptures
+- Prévision de stock, optimisation de la chaîne d’approvisionnement
 
 ### Expérience client
-- Recommandations pertinentes
-- Augmentation du panier moyen
+- Suggestions personnalisées, meilleure satisfaction, panier moyen augmenté
 
 ---
 
-## 🛠️ Améliorations possibles
-- Connexion à des données réelles Carrefour
-- Intégration d’algorithmes avancés (XGBoost, LSTM)
-- Tableau de bord complet
-- API REST / Monitoring
-- Validation via tests A/B
+## ⚠️ Limitations actuelles
+- Données simulées
+- Modèles simplifiés
+- Pas de base de données persistante
+- Interface basique
+
+## 💡 Pistes d'amélioration
+- Intégration de données Carrefour réelles
+- Modèles avancés (XGBoost, LSTM)
+- Tableau de bord Streamlit avec KPI
+- Intégration API / REST
+- Tests A/B, logs utilisateurs
 
 ---
 
-## 👩‍💻 Créatrice
-Développé par **Dyhia BERKHOUCHE** dans un cadre pédagogique pour illustrer l’usage opérationnel du Machine Learning dans le secteur du retail.
+## 🧾 A propos
+Ce projet est une **démonstration pédagogique** du potentiel du Machine Learning dans le retail.
+
