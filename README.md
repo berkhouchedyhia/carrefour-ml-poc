@@ -10,17 +10,17 @@ Ce projet interactif démontre comment le Machine Learning peut répondre à tro
 
 ## Fonctionnalités principales
 
-### 🔹 Prédiction d'achat (Classification)
+### * Prédiction d'achat (Classification)
 - Modèle : `RandomForestClassifier`
 - Entrées : âge, revenu, fréquence d'achat, panier moyen
 - Sortie : probabilité d’achat d’un produit
 
-### 🔹 Prévision de la demande (Séries temporelles)
+### * Prévision de la demande (Séries temporelles)
 - Modèle : `LinearRegression`
 - Données : demande journalière simulée (365 jours)
 - Visualisation interactive + prévision d’une date future
 
-### 🔹 Recommandation produit (Collaborative Filtering)
+### * Recommandation produit (Collaborative Filtering)
 - Modèle : `K-Nearest Neighbors`
 - Données : matrice binaire client-produit
 - Recommandation par similarité entre clients
