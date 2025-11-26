@@ -1,4 +1,4 @@
-# 🧠 POC Machine Learning - Carrefour Market 🧠
+# POC Machine Learning - Carrefour Market 🧠
 
 ## 📌 Objectif
 Ce projet interactif démontre comment le Machine Learning peut répondre à trois besoins métiers stratégiques de Carrefour Market :
@@ -8,7 +8,7 @@ Ce projet interactif démontre comment le Machine Learning peut répondre à tro
 
 ---
 
-## 🚀 Fonctionnalités principales
+## Fonctionnalités principales
 
 ### 🔹 Prédiction d'achat (Classification)
 - Modèle : `RandomForestClassifier`
@@ -27,7 +27,7 @@ Ce projet interactif démontre comment le Machine Learning peut répondre à tro
 
 ---
 
-## 🏗️ Structure du projet
+## Structure du projet
 
 ```
 carrefour-ml-poc/
@@ -40,7 +40,7 @@ carrefour-ml-poc/
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 ### Prérequis
 - Python 3.7+
@@ -57,7 +57,7 @@ streamlit run app.py
 
 ---
 
-### 📦 Dépendances Python utilisées
+### Dépendances Python utilisées
 
 Le projet utilise les bibliothèques suivantes :
 
@@ -71,7 +71,7 @@ Le projet utilise les bibliothèques suivantes :
 
 ---
 
-## 💼 Cas d’usage métier
+## Cas d’usage métier
 
 ### Marketing
 - Ciblage comportemental
@@ -87,7 +87,7 @@ Le projet utilise les bibliothèques suivantes :
 
 ---
 
-## 🛠️ Améliorations possibles
+## Améliorations possibles
 - Connexion à des données réelles Carrefour
 - Intégration d’algorithmes avancés (XGBoost, LSTM)
 - Tableau de bord complet
@@ -96,5 +96,5 @@ Le projet utilise les bibliothèques suivantes :
 
 ---
 
-## 👩‍💻 Créatrice
+## Créatrice
 Développé par **Dyhia BERKHOUCHE** dans un cadre pédagogique pour illustrer l’usage opérationnel du Machine Learning dans le secteur du retail.
