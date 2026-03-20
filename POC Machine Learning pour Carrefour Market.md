@@ -44,8 +44,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-L'application sera accessible à l'adresse : http://localhost:8501
-
+L'application sera accessible au lien suivant : https://carrefour-ml-poc-y6h5g42kbqgb23eibmtjjt.streamlit.app/
 ## Structure du projet
 
 ```
